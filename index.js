@@ -9,7 +9,6 @@ require('./services/passport')
 
 mongoose.connect(keys.mongoURI)
 
-require('./routes/authRoutes')(app)
 
 app.use(
     cookieSession({
@@ -20,7 +19,9 @@ app.use(
 
 app.use(passport.initialize())
 app.use(passport.session())
+//tells passport to use cookies for auth
 
+require('./routes/authRoutes')(app)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT)
