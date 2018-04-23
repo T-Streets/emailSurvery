@@ -17,6 +17,8 @@ app.use(
     })
 )
 
+
+//Middleware
 app.use(passport.initialize())
 app.use(passport.session())
 //tells passport to use cookies for auth
