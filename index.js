@@ -8,7 +8,7 @@ const app = express()
 require('./models/user')
 require('./services/passport')
 
-mongoose.connect(keys.mongoURI)
+mongoose.connect(keys.mongodbURI)
 
 /**
  * middleware parses API requests to be used in req.body
